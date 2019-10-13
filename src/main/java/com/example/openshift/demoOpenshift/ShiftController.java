@@ -19,8 +19,9 @@ public class ShiftController {
     @ResponseBody
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @RequestMapping(value = "/time")
-    public String getTime() {
-        return System.getProperty("os.name") +" date/time:" + LocalDateTime.now().format(formatter);
+    public List getTime() {
+      return Arrays.asList(System.getProperty("os.name"),
+              LocalDateTime.now().format(formatter));
     }
 
 }
