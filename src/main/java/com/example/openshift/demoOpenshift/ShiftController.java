@@ -17,8 +17,8 @@ public class ShiftController {
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd:MM:yyyy HH:mm:ss");
 
     @ResponseBody
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @RequestMapping(value = "/time")
+    @GetMapping(value="")
     public List getTime() {
       return Arrays.asList(System.getProperty("os.name"),
               LocalDateTime.now().format(formatter));
