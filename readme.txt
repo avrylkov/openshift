@@ -1,3 +1,5 @@
+#========== Docker =============
+# G:\Docker Toolbox\doodle\
 cd doodle
 
 git clone https://github.com/avrylkov/openshift.git
@@ -17,3 +19,26 @@ docker build -t avrylkov/demo-openshift .
 docker login ;
 
 docker push avrylkov/demo-openshift
+
+#=========== minishift ==============
+
+minishift start
+minishift console
+minishift stop
+
+https://192.168.99.100:8443/console
+developer/developer
+
+oc new-app redhat-openjdk18-openshift:1.3~https://github.com/avrylkov/openshift.git
+
+oc login -u developer -p developer
+oc project <projectname>
+
+oc new-app --docker-image=avrylkov/demo-openshift --name=demo-openshift
+#oc new-app avrylkov/demo-openshift
+
+oc status
+
+oc expose svc/demo-openshift
+
+
