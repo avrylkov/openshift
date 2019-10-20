@@ -20,6 +20,9 @@ docker login ;
 
 docker push avrylkov/demo-openshift
 
+docker ps
+docker-machine ip
+curl 192.168.99.100:8080/time
 #=========== minishift ==============
 
 minishift start
@@ -35,10 +38,10 @@ oc login -u developer -p developer
 oc project <projectname>
 
 oc new-app --docker-image=avrylkov/demo-openshift --name=demo-openshift
-#oc new-app avrylkov/demo-openshift
+# oc new-app avrylkov/demo-openshift
 
 oc status
 
-oc expose svc/demo-openshift
+oc expose dc/demo-openshift --port=8080
 
 
