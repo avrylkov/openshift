@@ -9,13 +9,14 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example.openshift</groupId>
-	<artifactId>demoOpenshift</artifactId>
+	<artifactId>demo-openshift</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demoOpenshift</name>
+	<name>demo-openshift</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
+		<docker.image.prefix>avrylkov</docker.image.prefix>
 	</properties>
 
 	<dependencies>
@@ -49,7 +50,7 @@
 				<artifactId>dockerfile-maven-plugin</artifactId>
 				<version>1.3.4</version>
 				<configuration>
-					<repository>avrylkov/${project.artifactId}</repository>
+					<repository>${docker.image.prefix}/${project.artifactId}</repository>
 				</configuration>
 			</plugin>
 
