@@ -16,6 +16,11 @@ public class ShiftController {
 
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd:MM:yyyy HH:mm:ss");
 
+    @RequestMapping("/")
+    public String hello() {
+        return "Use path /time to get info";
+    }
+
     @ResponseBody
     @RequestMapping(value = "/time")
     @GetMapping(value="", produces = MediaType.APPLICATION_JSON_VALUE)
