@@ -25,7 +25,7 @@ docker-machine ip
 curl 192.168.99.100:8080/time
 #=========== minishift ==============
 
-minishift start
+minishift start --profile minishift
 minishift console
 minishift stop
 
@@ -34,6 +34,7 @@ developer/developer
 
 oc new-app redhat-openjdk18-openshift:1.3~https://github.com/avrylkov/openshift.git
 
+oc login -u system:admin
 oc login -u developer -p developer
 oc project <projectname>
 

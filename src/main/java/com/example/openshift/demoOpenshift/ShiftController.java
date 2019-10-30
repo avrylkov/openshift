@@ -27,6 +27,7 @@ public class ShiftController {
     @GetMapping(value="", produces = MediaType.APPLICATION_JSON_VALUE)
     public List getTime() {
       return Arrays.asList(System.getProperty("os.name"),
+              System.getenv("HOSTNAME"),
               LocalDateTime.now().format(formatter));
     }
 
